@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Stuff I worked on</title><link href="/" rel="alternate"></link><link href="/feeds/test.atom.xml" rel="self"></link><id>/</id><updated>2016-06-07T15:37:00-04:00</updated><entry><title>Test Post</title><link href="/test-post.html" rel="alternate"></link><published>2016-06-07T15:37:00-04:00</published><author><name>Leonard Chan</name></author><id>tag:,2016-06-07:test-post.html</id><summary type="html">&lt;p&gt;Sample text&lt;/p&gt;</summary></entry></feed>
