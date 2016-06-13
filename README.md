@@ -1,4 +1,6 @@
 # New Personal Website
+The `build` branch contains the source that uses pelican.
+The `master` branch contains the generated html.
 
 ## Usage
 
