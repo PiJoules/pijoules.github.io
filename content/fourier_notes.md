@@ -3,11 +3,8 @@ Date: 2016-06-13 16:13
 Category: Notes
 Tags: Fourier Transform, Notes
 Authors: Leonard Chan
-Summary: Some notes I took to study for Transforms II
 
-These are just notes I put on this website so that I will be able to remeber the content and be able to review it easly for later exams.
-This is not meant to go into full detail about the Fourier Transform, so stuff like derivations and proofs will not be included b/c deriving
-this stuff requires a lot more research than I'd like to do.
+These are just notes I put on this website so that I will be able to remeber the content and be able to review it easly for later exams. This is not meant to go into full detail about the Fourier Transform, so stuff like derivations and proofs will not be included b/c deriving this stuff requires a lot more research than I'd like to do.
 
 # Fourier Transform
 **Fourier Transform**
