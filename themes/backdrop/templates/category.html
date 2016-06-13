@@ -8,6 +8,7 @@
         <h2>Articles in category &ldquo;{{category}}&rdquo;</h2>
 {# category is unicode #}
 {% if category|string == "Github Projects" %}
+<!--{{ github_projects|length }}-->
 {% for project in github_projects %}
 <section class="summary">
 <h3><a href="{{ project.github_url }}" rel="bookmark" title="Permalink to Test Post">{{ project.name }}</a></h3>

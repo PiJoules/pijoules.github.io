@@ -23,14 +23,21 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+LINKS = (
+    ('Pelican', 'http://getpelican.com/'),
+    ('Python.org', 'http://python.org/'),
+    ('Jinja2', 'http://jinja.pocoo.org/'),
+)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+#SOCIAL = (('You can add links in your config file', '#'),
+#          ('Another social link', '#'),)
+
+# This doesn't work for some reason.
+MD_EXTENSIONS = [
+    "markdown.extensions.nl2br",
+    "markdown.extensions.sane_lists",
+]
 
 DEFAULT_PAGINATION = 10
 
@@ -40,7 +47,8 @@ DEFAULT_PAGINATION = 10
 STATIC_PATHS = ["images"]
 
 PLUGINS = [
-    'pelican_githubprojects',
+    "pelican_githubprojects",
+    "render_math",
 ]
 GITHUB_USER = 'pijoules'
 GITHUB_SORT_BY = "created"
@@ -52,7 +60,7 @@ if theme == "backdrop":
     expanded_theme_path = os.path.expanduser(theme_path)
     THEME = expanded_theme_path
     PAGINATED_DIRECT_TEMPLATES = ('categories', 'archives')
-    SITESUBTITLE = "Sample SITESUBTITLE"
+    SITESUBTITLE = "Personal Blog/Notes"
     PROFILE_IMAGE = "/images/soldier_uber.jpg"
     BACKDROP_IMAGE = "/images/process.jpeg"
     #FAVICON = None

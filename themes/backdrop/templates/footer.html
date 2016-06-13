@@ -23,8 +23,8 @@
     <div class="small-12 medium-6 medium-pull-3 columns text-center">
     {% if tags %}
         <p class="tag-cloud">
-            <a href="{{ SITEURL }}/tags.html"><i class="fa fa-tags"></i>&nbsp;Tags:</a>&nbsp;&nbsp;
-        {% for tag in tag_cloud %}
+        <a href="{{ SITEURL }}/tags.html"><i class="fa fa-tags"></i>&nbsp;Tags:</a>&nbsp;&nbsp;
+        {% for tag in tags %}
             <a href="{{ SITEURL }}/tag/{{ tag.0|string|replace(" ", "-" )|lower }}.html"><span class="label">{{ tag.0 }}</span></a>
         {% endfor %}
             &nbsp;&hellip;
@@ -35,7 +35,8 @@
         <hr>
         <div class="small-12 medium-6 columns">
             <p class="small-text-center medium-text-left">
-                &copy; {{ YEAR }} {{ AUTHOR }} {{ LICENSE }}
+            <!--&copy; {{ YEAR }} {{ AUTHOR }} {{ LICENSE }}-->
+                &copy; LOLOLOL
                 <!-- <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="cc.png" /></a>-->
             </p>
         </div>

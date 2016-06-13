@@ -8,7 +8,7 @@
     </div>
     {% endif %}
     {% if articles|length > 1 %}
-    <div class="small-12 medium-6 columns small-articles">
+    <div class="small-12 {% if articles|length == 2 %}medium-12{% else %}medium-6{% endif %} columns small-articles">
         {{ macros.article_summary(articles[1],SITEURL,False,False,disqus=DISQUS_SITENAME) }}
     </div>
     {% endif %}

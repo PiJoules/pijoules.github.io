@@ -79,7 +79,6 @@
                         {% endfor %}
                         </ul>
                         <ul class="right">
-                            <!--<li><a href="{{ SITEURL }}/category/github.html">Github Projects</a></li>-->
                         {% for cat, null in categories %}
                             <li{% if cat == category %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
                         {% endfor %}
