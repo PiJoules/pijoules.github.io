@@ -13,7 +13,7 @@ $ source personal-website/bin/activate
 
 or
 
-Using [_switch_virtualenv](https://github.com/PiJoules/python-dev-scripts#_switch_virtualenv)
+Using [_switch_virtualenv](https://github.com/PiJoules/python-dev-scripts#_switch_virtualenv):
 ```sh
 $ _switch_virtualenv personal-website
 ```
