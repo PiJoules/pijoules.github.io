@@ -1,6 +1,8 @@
 # New Personal Website
 The `build` branch contains the source that uses pelican.
-The `master` branch contains the generated html.
+The `master` branch contains the generated html and is what is displayed on the
+github.io page.
+When developing, be sure to clone, checkout, and work on the `build` branch.
 
 ## Usage
 
