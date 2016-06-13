@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}{{ category|striptags }}{% endblock title %}
+
+{% block content %}
+<!--category-->
+<div class="row">
+    <div class="small-12 columns">
+        <h2>Articles in category &ldquo;{{category}}&rdquo;</h2>
+{# category is unicode #}
+{% if category|string == "Github Projects" %}
+{% for project in github_projects %}
+<section class="summary">
+<h3><a href="{{ project.github_url }}" rel="bookmark" title="Permalink to Test Post">{{ project.name }}</a></h3>
+    <div class="row info-bar" style="margin-left:0rem;margin-bottom:6px;">
+    <div class="small-12 columns">
+        <ul class="inline-list">
+            <li><span><i class="fa fa-github"></i>&nbsp; {{ project.language }}</span></li>
+            <li><span><i class="fa fa-folder-open"></i>&nbsp; <a href="/category/github-projects.html">Github Projects</a></span></li>
+        </ul>
+    </div>
+</div>
+    <div class="row summary">
+        <div class="small-12 medium-12 columns">
+            {% if project.description %}<p>{{ project.description }}</p>{% endif %}
+            <p class="text-right"><a href="{{ project.github_url }}">View Source</a></p>
+        </div>
+    </div>
+</section>
+{% endfor %}
+{% else %}
+{% import 'macros.html' as macros %}
+        {{ macros.page_list(articles_page, articles_paginator.num_pages, page_name, SITEURL, disqus=DISQUS_SITENAME) }}
+{% endif %}
+    </div>
+</div>
+{% endblock content %}
