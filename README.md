@@ -2,15 +2,18 @@
 
 ## Usage
 
-### Create a new virtual env to install everything in.
+### Virtualenv
+Create a new virtual env to install everything in.
 
-#### Using `virtualenv`:
+Using `virtualenv`:
 ```sh
 $ virtualenv personal-website
 $ source personal-website/bin/activate
 ```
 
-#### Using `[_switch_virtualenv](https://github.com/PiJoules/python-dev-scripts#_switch_virtualenv)`
+or
+
+Using [_switch_virtualenv](https://github.com/PiJoules/python-dev-scripts#_switch_virtualenv)
 ```sh
 $ _switch_virtualenv personal-website
 ```
