@@ -1,6 +1,9 @@
 # pelican output
 output/
 
+# pids from makefile
+*.pid
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
