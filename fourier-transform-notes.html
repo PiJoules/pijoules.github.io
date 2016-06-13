@@ -7,10 +7,10 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="author" content="Leonard Chan" />
-        <title>Categories</title>
+        <title>Fourier Transform Notes</title>
         
-        <meta name="description" content="Personal Blog/Notes" />
-        <meta name="keywords" content="Blog Python "/>
+<meta name="description" content="&lt;p&gt;Some notes I took to study for Transforms II&lt;/p&gt;" />
+<meta name="keywords" content=" Fourier Transform Notes  "/>
 
         <!--[if !IE 7]>
         <style type="text/css">
@@ -22,6 +22,7 @@
         <script src="/theme/js/modernizr.js"></script>
 
         <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Stuff I worked on Full Atom Feed" />
+        <link href="/feeds/notes.atom.xml" type="application/atom+xml" rel="alternate" title="Stuff I worked on Categories Atom Feed" />
 
     </head>
       
@@ -40,7 +41,7 @@
                         </ul>
                         <ul class="right">
                             <li><a href="/category/github-projects.html">Github Projects</a></li>
-                            <li><a href="/category/notes.html">Notes</a></li>
+                            <li class="active"><a href="/category/notes.html">Notes</a></li>
                         </ul>
                     </section>
                 </nav>
@@ -53,32 +54,10 @@
                 </div>
             
                 <div id="contents">
-<!--categories-->
 <div class="row">
     <div class="small-12 columns article">
-        <h2><a href="/category/github-projects.html">Github Projects</a></h2>
-              <section class="summary">
-    <h3><a href="/test-github-post.html" rel="bookmark" title="Permalink to Test Github Post">Test Github Post</a></h3>
-    <div class="row info-bar" style="margin-left:0rem;margin-bottom:6px;">
-    <div class="small-12 columns">
-        <ul class="inline-list">
-            <li><span><i class="fa fa-calendar"></i>&nbsp; Sun 12 June 2016</span></li>
-            <li><span><i class="fa fa-folder-open"></i>&nbsp; <a href="/category/github-projects.html">Github Projects</a></span></li>
-        </ul>
-    </div>
-</div>
-    <div class="row summary">
-        <div class="small-12 medium-12 columns">
-            <p>This is a placeholder for Github Projects category.</p>
-            <p class='text-right'><a href="/test-github-post.html">Continue reading&hellip;</a></p>
-        </div>
-    </div>
-</section>
-            <hr>
-        <h2><a href="/category/notes.html">Notes</a></h2>
-              <section class="summary">
-    <h3><a href="/fourier-transform-notes.html" rel="bookmark" title="Permalink to Fourier Transform Notes">Fourier Transform Notes</a></h3>
-    <div class="row info-bar" style="margin-left:0rem;margin-bottom:6px;">
+        <h2>Fourier Transform Notes</h2>
+        <div class="row info-bar" style="margin-left:0rem;margin-bottom:6px;">
     <div class="small-12 columns">
         <ul class="inline-list">
             <li><span><i class="fa fa-calendar"></i>&nbsp; Mon 13 June 2016</span></li>
@@ -93,13 +72,109 @@
         </ul>
     </div>
 </div>
-    <div class="row summary">
-        <div class="small-12 medium-12 columns">
-            <p>Some notes I took to study for Transforms II</p>
-            <p class='text-right'><a href="/fourier-transform-notes.html">Continue reading&hellip;</a></p>
-        </div>
-    </div>
-</section>
+        <section class="article">
+            <p>These are just notes I put on this website so that I will be able to remeber the content and be able to review it easly for later exams.<br />
+This is not meant to go into full detail about the Fourier Transform, so stuff like derivations and proofs will not be included b/c deriving<br />
+this stuff requires a lot more research than I'd like to do.</p>
+<h1>Fourier Transform</h1>
+<p><strong>Fourier Transform</strong><br />
+</p>
+<div class="math">$$ F\{x(t)\} = X(\omega) = \int_{-\infty}^{\infty} x(t)e^{-j \omega t}dt $$</div>
+<p><strong>Inverse Fourier Transform</strong><br />
+</p>
+<div class="math">$$ F^{-1}\{X(\omega)\} = x(t) = \frac{1}{2\pi}\int_{-\infty}^{\infty} X(\omega)e^{j \omega t}d\omega $$</div>
+<p>One of the main purposes of the Fourier Transform is to point out the dominant frequencies of a waveform. This can easily be seen with the FT of a regular sine or cosine wave.</p>
+<p><img alt="FT and IFT of cosine wave" src="/images/fourier/cosine.png" /></p>
+<p>The FT of a cosine wave is the dirac delta functions at <span class="math">\(+ω_0\)</span> and <span class="math">\(-ω_0\)</span>. This makes sense since the only frequency in a regular cosine wave is <span class="math">\(ω_0\)</span>. The reason for the peak at <span class="math">\(-ω_0\)</span> is because <strong>the FT of real waves are always symmetrical across the initial phase shift</strong>. In this case, φ = 0, so the FT of <span class="math">\(cos(2πt)\)</span> will be symmetrical across the y-axis.</p>
+<p>For the example above, the FT is not an exact dirac function since I am only integrating over a finite set of data rather than an infinite set from t = -∞ to +∞. If I had more data points, the peaks would stand out more. Similarly, the reconstruction of x(t) from X(ω) is not exactly the same as the original x(t) because of the finite amount of data points I am integrating over in the frequency domain. <strong>For the continuous FT, the FT converts continuous data in the time domain to continous data in the frequency domain.</strong></p>
+<h1>Discrete Time Fourier Transform</h1>
+<p><strong>Discrete Time Fourier Transform of x[n]</strong><br />
+</p>
+<div class="math">$$ X_{s}(\Omega) = \sum_{n=-\infty}^{\infty} x[n]e^{-j \Omega n} $$</div>
+<p><strong>Inverse Fourier Transform of X(ω)</strong><br />
+</p>
+<div class="math">$$ x[n] = \frac{1}{2\pi} \int_{2\pi} X_s(\Omega) e^{j \Omega n} d\Omega $$</div>
+<p>In the real world though, data is not necessarily continuous. In the example used to generate x(t), I just found x(t) at very small increments of t to replicate continuous data. Really, I just took discrete values of x(t) sampled every Ts seconds. The DTFT allows us to essentially take the Fourier Transform of discrete/sampled data, though the spectrum is different in the frequency domain than the continuous FT.</p>
+<p><img alt="continuous and discrete cosine wave" src="/images/fourier/cosinediscrete.png" /></p>
+<p><img alt="FT and DTFT of cosine wave" src="/images/fourier/cosinedtft.png" /></p>
+<p><img alt="Comparison between reconstructed discrete cosine wave and original" src="/images/fourier/cosinedtftreconstruct.png" /></p>
+<p>In the example above, I take the FT of a continuous cosine wave and the DTFT of the cosine wave sampled every Ts seconds. In this case, Ts = 0.05 s and my sampling frequency (fs) = 20 Hz. The FT of x(t) returns X(ω), which should be two dirac delta functions at positive and negative <span class="math">\(ω_0\)</span>. The DTFT of x[n], however, returns Xs(Ω). This spectrum is different from that of the FT in that:</p>
+<ol>
+<li><strong>The DTFT is in terms of Ω while the FT is in terms of ω, where <span class="math">\(X_s(Ω)\)</span> = <span class="math">\(X_s(ωTs)\)</span>.</strong> (A similar example of this notation is how x[n] = x(nTs).) Though both have the same units (rad/s), the scale of the DTFT is smaller than that of the FT by a factor of the sampling frequency (fs = 1/Ts).</li>
+<li><strong>The DTFT repeats every 2π.</strong> This is because the DTFT is the sum of various FTs at frequencies that are 2π apart from each other.</li>
+<li><strong>The DTFT transforms discrete data from the time domain to continuous data in the frequency domain</strong> while the FT transforms continuous data in the time domain to continuous data in the frequency domain.</li>
+</ol>
+<p>Like the IFT, the original discrete signal can also be reconstructed from its DTFT. Theoretically, the continuous signal could be constructed from the discrete signal, though this would require an infinitely large sampling frequency to replicate an infinitesimally small dt.</p>
+<h1>Resources</h1>
+<ul>
+<li><a href="http://www.mechmat.ethz.ch/Lectures/tables.pdf">Fourier Transforms Table</a></li>
+</ul>
+<h2>Source Code</h2>
+<ul>
+<li>Matlab<ul>
+<li><a href="https://gist.github.com/PiJoules/cae4321693638e082495">Cosine Fourier Transform</a></li>
+<li><a href="https://gist.github.com/PiJoules/e553751fdfad0338865a">Cosine Discrete Time Fourier Transform</a></li>
+</ul>
+</li>
+</ul>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' && location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' }, Macros: {} }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>    
+        </section>
     </div>
 </div>
                 </div>
