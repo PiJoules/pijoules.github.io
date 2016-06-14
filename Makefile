@@ -119,6 +119,7 @@ cf_upload: publish
 
 github: publish
 	cp README.md $(OUTPUTDIR)
+	echo "leonardchan.me" > $(OUTPUTDIR)/CNAME  # Custom domain
 	ghp-import -m "Generate Pelican site" -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR)
 	git push origin $(GITHUB_PAGES_BRANCH)
 
