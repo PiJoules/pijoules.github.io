@@ -40,7 +40,7 @@ To use this version instead of the original:
 (personal-website) $ git clone https://github.com/PiJoules/pelican-githubprojects
 (personal-website) $ cd pelican-githubprojects
 (personal-website) $ python setup.py bdist_wheel
-(personal-website) $ python wheel install dist/pelican_vimeo-0.1.0-py2.py3-none-any.whl
+(personal-website) $ wheel install dist/pelican_vimeo-0.1.0-py2.py3-none-any.whl --force
 ```
 
 ### Starting Development server
