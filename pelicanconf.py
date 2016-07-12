@@ -49,7 +49,7 @@ STATIC_PATHS = ["images"]
 
 PLUGINS = [
     "pelican_githubprojects",
-    "render_math",
+    "pelican_plugin-render_math",
 ]
 GITHUB_USER = 'pijoules'
 GITHUB_SORT_BY = "created"

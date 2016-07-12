@@ -4,6 +4,17 @@ The `master` branch contains the generated html and is what is displayed on the
 github.io page.
 When developing, be sure to clone, checkout, and work on the `build` branch.
 
+## Cloning
+This module uncludes submodules, so be sure to add the `--recursive` arg to
+clone the submodules also.
+
+You will also be cloning the build branch, so be sure to add the `-b build` args.
+
+Altogether, to get a complete copy of the code for development:
+```sh
+$ git clone --recursive -b build https://github.com/PiJoules/pijoules.github.io.git
+```
+
 ## Usage
 
 ### Virtualenv
@@ -27,20 +38,6 @@ $ _switch_virtualenv personal-website
 #### requirements.txt
 ```sh
 (personal-website) $ pip install -r requirements.txt
-```
-
-#### [Pelican Github Projects](https://github.com/kura/pelican-githubprojects)
-This project also depends on Pelican Github Projects, but there is a change
-that I made to the source that I am waiting for the owner to add from my
-pull request. Untill that is made, I use my own forked copy with the changes
-I implemented.
-
-To use this version instead of the original:
-```sh
-(personal-website) $ git clone https://github.com/PiJoules/pelican-githubprojects
-(personal-website) $ cd pelican-githubprojects
-(personal-website) $ python setup.py bdist_wheel
-(personal-website) $ wheel install dist/pelican_vimeo-0.1.0-py2.py3-none-any.whl --force
 ```
 
 ### Starting Development server
